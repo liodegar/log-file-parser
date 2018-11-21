@@ -28,7 +28,7 @@ and then execute from a command line the following instruction:
 
 `mvn spring-boot:run -Dspring-boot.run.arguments="--startDate=2017-01-01.13:00:00,--duration=hourly,--threshold=200,--accesslog=/test/resources/access.log"`
 
-All the three parameter: startDate(yyyy-MM-dd.HH:mm:ss), duration(hourly, daily) and threshold (integer) are required. Failing in giving these values will cause an exception.
+All the four parameter: startDate(yyyy-MM-dd.HH:mm:ss), duration(hourly, daily),  threshold (integer) and accesslog (log file path) are required. Failing in giving these values will cause an exception.
 
 After this command, the parser will execute the following steps:
 
@@ -36,9 +36,9 @@ After this command, the parser will execute the following steps:
 
 2. Parse each line into a Java object.
 
-3. Filter the retrieved the data.
+3. Filter the retrieved data.
 
-4. Log all the result records. This functionality is sending these records to the STDOUT console, but if
+4. Log all the result records. This functionality sends these records to the STDOUT console, but if
 it is required to redirect them to a specific file, these can be easily achieve by adding another appender in the lo4j.properties file.
 
 5. Save all the result records in the defined MySQL DB instance.
